@@ -4,4 +4,4 @@
 
 ## YOU ALL PLEASE ADD YOUR ID's BELOW
 
-[Kartik Pawar]('https://github.com/kartikpawar10/)
+[Kartik Pawar](https://github.com/kartikpawar10)
