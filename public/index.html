@@ -4,69 +4,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-</head>
+    <title>Login Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="./style.css">
+</head> 
 
 <body>
+    <div class="cursor"></div>
     <div class="container">
-        <div class="title">Registration </div>
-        <form action="#" method="post" enctype="application/x-www-form-urlencoded">
-            <div class="user-details">
-                <div class="input-box">
-                    <span class="details">Full name</span>
-                    <input type="text" placeholder="Enter your name" required>
+        <div class="form-container sign-up">
+            <form>
+                <h1>Create Account</h1>
+                <div class="social-icons">
+                    <a href="#" class="icons"><i class="fa-brands fa-google"></i></a>
+                    <a href="#" class="icons"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="icons"><i class="fa-brands fa-github"></i></a>
+                    <a href="#" class="icons"><i class="fa-brands fa-linkedin-in"></i></a>
                 </div>
-                <div class="input-box">
-                    <span class="details">Username</span>
-                    <input type="text" placeholder="Enter your Username" required>
-                </div>
-                <div class="input-box">
-                    <span class="details">E-mail</span>
-                    <input type="text" placeholder="Enter your E-mail" required>
-                </div>
-                <div class="input-box">
-                    <span class="details">Phone Number</span>
-                    <input type="number"   pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="Enter your Phone Number" required>
-                </div>
-                <div class="input-box">
-                    <span class="details">Password</span>
-                    <input type="password" id="Phone" placeholder="Enter your Password" required >
-                </div>
-                <div class="input-box">
-                    <span class="details">Confirm Password</span>
-                    <input type="password" id="Phone" placeholder="Confirm your Password" required>
-                </div>
-                <div class="gender-details">
-                    <input type="radio" name="gender" id="dot-1">
-                    <input type="radio" name="gender" id="dot-2">
-                    <input type="radio" name="gender" id="dot-3">
-                    <span class="gender-title">Gender</span>
-                    <div class="catagory">
-                        <label for="dot-1">
-                            <span class="dot one"></span>
-                            <span class="gender">Male</span>
 
-                        </label>
-                        <label for="dot-2">
-                            <span class="dot two"></span>
-                            <span class="gender">Female</span>
+                <span>or use your email for registration</span>
+                <input type="text" placeholder="Name">
+                <input type="email" placeholder="Email">
+                <input type="password" placeholder="Password">
+                
+            <button>Sign Up</button>
+            </form>
+        </div>
 
-                        </label>
-                        <label for="dot-3">
-                            <span class="dot three"></span>
-                            <span class="gender">Other</span>
-                        </label>
+        <div class="form-container sign-in">
+            <form>
+                <h1>Sign In</h1>
+                <div class="social-icons">
+                    <a href="#" class="icons"><i class="fa-brands fa-google"></i></a>
+                    <a href="#" class="icons"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="icons"><i class="fa-brands fa-github"></i></a>
+                    <a href="#" class="icons"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+
+                <span>or use your email password</span>
+                <input type="email" placeholder="Email">
+                <input type="password" placeholder="Password">
+                <a class="forget" href="#">Forget your password ? (bhulakkad)</a>
+            <button>Sign In</button>
+            </form>
+            </div>
+            <!-- for toggle -->
+            <div class="toggle-container">
+                <div class="toggle">
+                    <div class="toggle-panel toggle-left">
+                        <h1>Welcome Back! to Encord</h1>
+                        <p>Enter your personal details to use all features of this website.</p>
+                        <button class="hidden" id="login">
+                            Sign In
+                        </button>
+                    </div>
+
+                    <div class="toggle-panel toggle-right">
+                        <h1>Hello, Dost!</h1>
+                        <p>Register with your personal details to use all features of this website.</p>
+                        <button class="hidden" id="register">
+                            Sign Up
+                        </button>
                     </div>
                 </div>
             </div>
-            <div class="btn">
-                <input type="submit" value="Register">
-            </div>
-        </form>
     </div>
-    </div>
-<script src="./script.js"></script>
+    <script src="./script.js"></script>
 </body>
-
 </html>
