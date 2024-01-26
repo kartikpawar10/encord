@@ -3,7 +3,8 @@ const { urlencoded } = require("body-parser");
 const express = require("express")
 const app = express();
 const connectDB = require("./db/connect")
-const Router = require("./routes/index");
+const router = require("./routes/index");
+const notFound = require("./middleware/not-found")
 const start = async()=>{
     try {
         await connectDB();
@@ -15,6 +16,7 @@ const start = async()=>{
 app.use(express.static('./public'))
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use('api/v1/task',Router)
+app.use('/api/v1/tasks',router)
+app.use(notFound)
 app.listen(5000)
 start()
