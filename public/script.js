@@ -9,10 +9,6 @@ registerBtn.addEventListener('click', () => {
 loginBtn.addEventListener('click', () => {
     container.classList.remove("active");
 });
-
-
-
-
 const cursor = document.querySelector(".cursor");
 
 document.addEventListener('mousemove', (e) => {

@@ -1,10 +1,12 @@
 const jwt = require("jsonwebtoken")
-const User = require("../model/user")
+const UserSchema = require("../model/user")
+const createJWT = (user,name)=>{
+   return jwt.sign({userId:user._id,name:name},process.env.JWT_SECRET,{expiresIn:process.env.JWT_LIFETIME,})
+}
 const register = async (req, res) => {
   const {name,email,password} = req.body
-  const user = await User.create({...req.body})
-  const token = user.createJWT()
-  console.log(req.body)
+  const user = await UserSchema.create({...req.body})
+  const token = createJWT(user,name)
   res.status(200).json({user:{name:user.name},token})
 };
 const login = async(req,res)=>{
@@ -13,7 +15,7 @@ const login = async(req,res)=>{
   if(!email || !password){
     return res.status(400).json({msg:"Please Provide Correct Email Or Password"})
   }
-  const user = await User.findOne({email})
+  const user = await UserSchema.findOne({email})
 
   if(!user){
     return res.status(401).json({msg:"Invalid Credentials"})
