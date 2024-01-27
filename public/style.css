@@ -230,14 +230,14 @@ body{
 /* cursor  */
 
 .cursor{
-    width: 20px;
-    height: 20px;
+    width: 10px;
+    height: 10px;
     border: 1px solid #fff;
-    box-shadow: 0 0 10px 5px green;
+    box-shadow: 0 0 10px #512da8;
     border-radius: 100%;
     background-color: #fff;
     position: absolute;
-    background-color: #000;
+    background-color: #fff;
 }
 
 .expand{
