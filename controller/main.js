@@ -1,12 +1,14 @@
 const jwt = require("jsonwebtoken")
 const UserSchema = require("../model/user")
-const createJWT = (user,name)=>{
-   return jwt.sign({userId:user._id,name:name},process.env.JWT_SECRET,{expiresIn:process.env.JWT_LIFETIME,})
+const createJWT = (user,name,email)=>{
+   return jwt.sign({userId:user._id,name:name,email:email},process.env.JWT_SECRET,{expiresIn:process.env.JWT_LIFETIME,})
 }
 const register = async (req, res) => {
   const {name,email,password} = req.body
   const user = await UserSchema.create({...req.body})
-  const token = createJWT(user,name)
+  const token = createJWT(user,name,email)
+  user.token = token;
+  user.save()
   res.status(200).json({user:{name:user.name},token})
 };
 const login = async(req,res)=>{
